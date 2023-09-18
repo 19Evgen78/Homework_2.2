@@ -35,12 +35,12 @@ public class Slytherin extends Hogwarts {
         return this.powerful;
     }
 
-    public static void compareStudents(Slytherin draco, Slytherin gregory) {
-        if (draco.getCunning() + draco.getDecisive() + draco.getAmbitious() + draco.getResourceful() + draco.getPowerful() > draco.getCunning() + gregory.getDecisive() + gregory.getAmbitious() + gregory.getResourceful() + gregory.getPowerful()) {
-            System.out.println("Драко лучший Слизеринец , чем Грегори");
-        } else {
-            System.out.println("Грегори лучший Слизеринец , чем Драко");
-        }
+    public String compareSlythering(Slytherin slytherin) {
+        return (cunning + decisive + ambitious + resourceful +powerful) > (slytherin.getCunning() +
+                slytherin.getDecisive() + slytherin.getAmbitious() +slytherin.getResourceful() +
+                slytherin.getPowerful()) ?
+                getName() + "лучший Слизеринец, чем" + slytherin.getName():
+                getName() + "худший Слизеринец, чем" + slytherin.getName();
 
     }
 

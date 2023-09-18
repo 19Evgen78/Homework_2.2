@@ -1,3 +1,5 @@
+
+
 public class Gryffindor extends Hogwarts {
     private int nobility;
     private int honor;
@@ -15,38 +17,30 @@ public class Gryffindor extends Hogwarts {
         return nobility;
     }
 
-    public void setNobility(int nobility) {
-        this.nobility = nobility;
-    }
 
     public int getHonor() {
         return honor;
     }
 
-    public void setHonor(int honor) {
-        this.honor = honor;
-    }
 
     public int getBravery() {
         return bravery;
     }
 
-    public void setBravery(int bravery) {
-        this.bravery = bravery;
+    @Override
+    public String toString() {
+        return "Gryffindor{" +
+                "nobility=" + nobility +
+                ", honor=" + honor +
+                ", bravery=" + bravery +
+                '}';
     }
 
-    public static void printDescriptionStudent(Gryffindor gryffindor) {
-        System.out.println(gryffindor.getName() + " " + gryffindor.getSurname() + " " + gryffindor.getWitchcraft()
-                + " " + gryffindor.getTransgress() + " " + gryffindor.getNobility() + " " + gryffindor.getHonor()
-                + " " + gryffindor.getBravery());
+    public String compareGryffindor(Gryffindor gryffindor) {
+        return (nobility + honor + bravery) > (gryffindor.getNobility() + gryffindor.getHonor() + gryffindor.getBravery()) ?
+                getName() + "лучший Гриффиндорец, чем " + gryffindor.getName():
+                getName() + "худший Гриффиндорец, чем" + gryffindor.getName();
+
     }
 
-    public static void compareStudents(Gryffindor harry, Gryffindor ron) {
-        if (harry.getNobility() + harry.getHonor() + harry.getBravery() > ron.getNobility() +
-                ron.getHonor() + ron.getBravery()) {
-            System.out.println("Гарри лучший Гриффиндорец , чем Рон");
-        }else {
-            System.out.println("Рон лучший Гриффиндорец , чем Гарри");
-        }
-    }
 }
